@@ -1,0 +1,296 @@
+{
+  "chilimix_aclint_regs": {
+    "params": [
+      {},
+      {
+        "N_HART": 2
+      },
+      {
+        "N_HART": 8
+      }
+    ],
+    "min_toggle": 30,
+    "note": "Generated register block: regbank bus bits with no field are constant and count as untoggled (CI's Verilator counts more of them than 5.020); its testbench checks every field port."
+  },
+  "chilimix_aclint": {
+    "params": [
+      {},
+      {
+        "N_HART": 3
+      },
+      {
+        "N_HART": 8
+      }
+    ]
+  },
+  "chilimix_plic_regs": {
+    "params": [
+      {},
+      {
+        "N_CTX": 3
+      },
+      {
+        "N_CTX": 16
+      }
+    ],
+    "min_toggle": 30,
+    "note": "Generated register block: regbank bus bits with no field are constant and count as untoggled (CI's Verilator counts more of them than 5.020); its testbench checks every field port."
+  },
+  "chilimix_plic": {
+    "params": [
+      {},
+      {
+        "N_CTX": 2
+      },
+      {
+        "N_CTX": 16
+      }
+    ]
+  },
+  "chilimix_uart_regs": {
+    "params": [
+      {}
+    ],
+    "min_toggle": 30,
+    "note": "Generated register block: regbank bus bits with no field are constant and count as untoggled (CI's Verilator counts more of them than 5.020); its testbench checks every field port."
+  },
+  "chilimix_uart_tx": {
+    "params": [
+      {}
+    ],
+    "min_line": 85,
+    "note": "the FSM default branches (next state and line bit) are unreachable"
+  },
+  "chilimix_uart_rx": {
+    "params": [
+      {}
+    ],
+    "min_line": 90,
+    "note": "the FSM default branch is unreachable"
+  },
+  "chilimix_uart": {
+    "params": [
+      {}
+    ],
+    "min_toggle": 85,
+    "note": "8-bit registers on a 32-bit bus: PRDATA bits 31:8 and PSLVERR (every offset is decoded) are constant; 91.9 % locally with Verilator 5.020, which counts fewer points than CI's."
+  },
+  "chilimix_gpio_regs": {
+    "params": [
+      {}
+    ],
+    "min_toggle": 30,
+    "note": "Generated register block: regbank bus bits with no field are constant and count as untoggled (CI's Verilator counts more of them than 5.020); its testbench checks every field port."
+  },
+  "chilimix_gpio": {
+    "params": [
+      {},
+      {
+        "N_GPIO": 1
+      },
+      {
+        "N_GPIO": 7
+      }
+    ]
+  },
+  "chilimix_socctl_regs": {
+    "params": [
+      {},
+      {
+        "N_HART": 3
+      },
+      {
+        "N_HART": 8
+      }
+    ],
+    "min_toggle": 30,
+    "note": "Generated register block: regbank bus bits with no field are constant and count as untoggled (CI's Verilator counts more of them than 5.020); its testbench checks every field port."
+  },
+  "chilimix_socctl": {
+    "params": [
+      {},
+      {
+        "N_DOM": 1,
+        "STEP": 1,
+        "HOLD": 2,
+        "N_HART": 4,
+        "HART_HOLD_RST": 10
+      },
+      {
+        "N_DOM": 8,
+        "STEP": 3,
+        "HOLD": 5,
+        "N_HART": 8
+      }
+    ]
+  },
+  "chilimix_timer_pwm_regs": {
+    "params": [
+      {}
+    ],
+    "min_toggle": 30,
+    "note": "Generated register block: regbank bus bits with no field are constant and count as untoggled (CI's Verilator counts more of them than 5.020); its testbench checks every field port."
+  },
+  "chilimix_timer_pwm": {
+    "params": [
+      {}
+    ]
+  },
+  "chilimix_timer_wdog_regs": {
+    "params": [
+      {}
+    ],
+    "min_toggle": 30,
+    "note": "Generated register block: regbank bus bits with no field are constant and count as untoggled (CI's Verilator counts more of them than 5.020); its testbench checks every field port."
+  },
+  "chilimix_timer_wdog": {
+    "params": [
+      {}
+    ]
+  },
+  "chilimix_timer": {
+    "params": [
+      {
+        "N_PWM": 1
+      },
+      {
+        "N_PWM": 3
+      },
+      {
+        "N_PWM": 4
+      }
+    ]
+  },
+  "chilimix_debug_dtm": {
+    "params": [
+      {},
+      {
+        "TCK_H": 2
+      },
+      {
+        "ABITS": 9,
+        "TCK_H": 7
+      }
+    ]
+  },
+  "chilimix_debug_dm": {
+    "params": [
+      {},
+      {
+        "XLEN": 64,
+        "SB_ADDR_W": 40,
+        "SB_DATA_W": 64
+      },
+      {
+        "XLEN": 64,
+        "SB_ADDR_W": 64,
+        "SB_DATA_W": 32
+      }
+    ],
+    "min_line": 95,
+    "note": "the FSM default branch is unreachable and dmi_rsp_op is constant 0 (errors go to cmderr); constant fields (dmstatus, the unused CMD words, cmd_q's cmdtype / aarsize bits) count as untoggled"
+  },
+  "chilimix_debug": {
+    "params": [
+      {},
+      {
+        "TCK_H": 2
+      },
+      {
+        "XLEN": 64,
+        "SB_ADDR_W": 48,
+        "SB_DATA_W": 64
+      }
+    ],
+    "min_toggle": 45,
+    "note": "Wiring top: its testbench checks every path once (JTAG, DMI, SBA at three sizes, the DM memory, debug_req / ndmreset), so its 32-bit buses carry few values; the units' testbenches toggle them fully."
+  },
+  "chilimix_spi_regs": {
+    "params": [
+      {}
+    ],
+    "min_toggle": 30,
+    "note": "Generated register block: regbank bus bits with no field are constant and count as untoggled (CI's Verilator counts more of them than 5.020); its testbench checks every field port."
+  },
+  "chilimix_spi_phy": {
+    "params": [
+      {},
+      {
+        "N_CS": 4
+      }
+    ],
+    "min_line": 95,
+    "min_toggle": 85,
+    "note": "The FSM default branch is unreachable; the upper bits of the 12-bit divisor and its tick counter stay 0 (a slow sck would need thousands of clocks per edge)."
+  },
+  "chilimix_spi_xip": {
+    "params": [
+      {},
+      {
+        "LINES": 2,
+        "LINE_B": 8
+      },
+      {
+        "ADDR_W": 24,
+        "LINES": 8,
+        "LINE_B": 32
+      }
+    ],
+    "min_line": 90,
+    "note": "The case default branches of the fill state machine are unreachable."
+  },
+  "chilimix_spi": {
+    "params": [
+      {}
+    ],
+    "min_toggle": 85,
+    "note": "sckdiv and the delay registers stay small to bound the run time, and PSLVERR never rises (the map is fully decoded); chilimix_spi_phy_tb and chilimix_spi_xip_tb toggle the wide values."
+  },
+  "chilimix_i2c_regs": {
+    "params": [
+      {}
+    ],
+    "min_toggle": 20,
+    "note": "Generated register block: regbank bus bits with no field are constant and count as untoggled (CI's Verilator counts more of them than 5.020), and every i2c register is 8 bits of the 32; its testbench checks every field port."
+  },
+  "chilimix_i2c_bit": {
+    "params": [
+      {}
+    ],
+    "min_line": 94,
+    "note": "The case default of the line levels is unreachable (every state has its branch)."
+  },
+  "chilimix_i2c": {
+    "params": [
+      {}
+    ],
+    "min_line": 95,
+    "min_toggle": 85,
+    "note": "The registers are 8 bits wide, so PRDATA bits 31:8 stay 0, and PSLVERR never rises; the byte state machine's case default is unreachable."
+  },
+  "chilimix_dma_ch": {
+    "params": [
+      {}
+    ],
+    "min_toggle": 85,
+    "note": "zero32 (the 32 high address bits that read 0) is constant and PSLVERR never rises in the testbench's legal accesses."
+  },
+  "chilimix_dma_regs": {
+    "params": [
+      {}
+    ],
+    "min_toggle": 30,
+    "note": "Generated register block: regbank bus bits with no field are constant and count as untoggled (CI's Verilator counts more of them than 5.020); its testbench checks every field port."
+  },
+  "chilimix_dma": {
+    "params": [
+      {},
+      {
+        "N_CH": 4
+      }
+    ],
+    "min_line": 92,
+    "min_toggle": 80,
+    "note": "Lines: the BASE / MASK constant functions run at elaboration and the engine's case default is unreachable. Toggle: HBURST / HMASTLOCK are constant, the channels' PSLVERR never rises, and transfers stay at 64 bytes or less so the high byte-count bits stay 0 (chilimix_dma_ch_tb toggles them)."
+  }
+}

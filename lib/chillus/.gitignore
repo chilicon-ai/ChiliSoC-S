@@ -1,0 +1,11 @@
+doc/reference/
+.vscode/*
+!.vscode/settings.json
+__pycache__/
+.venv/
+sim/build/
+sim/out/
+syn/out/
+syn/orfs/out/
+
+/syn/experiments.json

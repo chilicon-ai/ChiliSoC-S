@@ -1,0 +1,438 @@
+{
+  "units": [
+    {
+      "name": "basechili_ahb_arbiter",
+      "kind": "module",
+      "path": "source/AMBA5/AHB/fabric/basechili_ahb_arbiter.sv",
+      "dependencies": [
+        "basechili_ahb_pkg",
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_decoder",
+        "basechili_onehot_mux",
+        "basechili_regular_mux",
+        "basechili_rr_arbiter"
+      ]
+    },
+    {
+      "name": "basechili_ahb_decoder",
+      "kind": "module",
+      "path": "source/AMBA5/AHB/fabric/basechili_ahb_decoder.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_ahb_default_sub",
+      "kind": "module",
+      "path": "source/AMBA5/AHB/subordinate/basechili_ahb_default_sub.sv",
+      "dependencies": [
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "basechili_ahb_manager",
+      "kind": "module",
+      "path": "source/AMBA5/AHB/manager/basechili_ahb_manager.sv",
+      "dependencies": [
+        "basechili_ahb_pkg",
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_counter",
+        "basechili_regular_mux",
+        "basechili_decoder"
+      ]
+    },
+    {
+      "name": "basechili_ahb_mux",
+      "kind": "module",
+      "path": "source/AMBA5/AHB/fabric/basechili_ahb_mux.sv",
+      "dependencies": [
+        "basechili_dffe",
+        "basechili_onehot_mux"
+      ]
+    },
+    {
+      "name": "basechili_ahb_pkg",
+      "kind": "package",
+      "path": "source/AMBA5/AHB/basechili_ahb_pkg.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_ahb_sram",
+      "kind": "module",
+      "path": "source/AMBA5/AHB/subordinate/basechili_ahb_sram.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_byte_strobe",
+        "basechili_ahb_default_sub"
+      ]
+    },
+    {
+      "name": "basechili_ahb_subordinate",
+      "kind": "module",
+      "path": "source/AMBA5/AHB/subordinate/basechili_ahb_subordinate.sv",
+      "dependencies": [
+        "basechili_ahb_pkg",
+        "basechili_dff",
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "basechili_ahb_to_apb",
+      "kind": "module",
+      "path": "source/AMBA5/AHB/bridge/basechili_ahb_to_apb.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_byte_strobe"
+      ]
+    },
+    {
+      "name": "basechili_ahb_wait",
+      "kind": "module",
+      "path": "source/AMBA5/AHB/fabric/basechili_ahb_wait.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_lfsr"
+      ]
+    },
+    {
+      "name": "basechili_apb_interconnect",
+      "kind": "module",
+      "path": "source/AMBA5/APB/fabric/basechili_apb_interconnect.sv",
+      "dependencies": [
+        "basechili_ahb_decoder",
+        "basechili_onehot_mux"
+      ]
+    },
+    {
+      "name": "basechili_apb_regbank",
+      "kind": "module",
+      "path": "source/AMBA5/APB/subordinate/basechili_apb_regbank.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_decoder",
+        "basechili_onehot_mux"
+      ]
+    },
+    {
+      "name": "basechili_byte_strobe",
+      "kind": "module",
+      "path": "source/byte_strobe/basechili_byte_strobe.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_clock_div",
+      "kind": "module",
+      "path": "source/clock_div/basechili_clock_div.sv",
+      "dependencies": [
+        "basechili_updown_counter",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "basechili_clock_gate",
+      "kind": "module",
+      "path": "source/clock_gate/basechili_clock_gate.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_counter",
+      "kind": "module",
+      "path": "source/counter/basechili_counter.sv",
+      "dependencies": [
+        "basechili_dff_sclr"
+      ]
+    },
+    {
+      "name": "basechili_decoder",
+      "kind": "module",
+      "path": "source/decoder/basechili_decoder.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_dff",
+      "kind": "module",
+      "path": "source/dff/basechili_dff.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_dff_sclr",
+      "kind": "module",
+      "path": "source/dff_sclr/basechili_dff_sclr.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_dffe",
+      "kind": "module",
+      "path": "source/dffe/basechili_dffe.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_dffe_cg",
+      "kind": "module",
+      "path": "source/dffe_cg/basechili_dffe_cg.sv",
+      "dependencies": [
+        "basechili_clock_gate",
+        "basechili_dff",
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "basechili_edge_detect",
+      "kind": "module",
+      "path": "source/edge_detect/basechili_edge_detect.sv",
+      "dependencies": [
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "basechili_encoder",
+      "kind": "module",
+      "path": "source/encoder/basechili_encoder.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_fifo",
+      "kind": "module",
+      "path": "source/fifo/basechili_fifo.sv",
+      "dependencies": [
+        "basechili_peek_fifo"
+      ]
+    },
+    {
+      "name": "basechili_handshake_sync",
+      "kind": "module",
+      "path": "source/handshake_sync/basechili_handshake_sync.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_sync"
+      ]
+    },
+    {
+      "name": "basechili_irq_aggregator",
+      "kind": "module",
+      "path": "source/irq_aggregator/basechili_irq_aggregator.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_edge_detect"
+      ]
+    },
+    {
+      "name": "basechili_jtag_tap",
+      "kind": "module",
+      "path": "source/jtag_tap/basechili_jtag_tap.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "basechili_latch",
+      "kind": "module",
+      "path": "source/latch/basechili_latch.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_latch_array",
+      "kind": "module",
+      "path": "source/latch_array/basechili_latch_array.sv",
+      "dependencies": [
+        "basechili_decoder",
+        "basechili_clock_gate",
+        "basechili_latch",
+        "basechili_regular_mux",
+        "basechili_dffe_cg"
+      ]
+    },
+    {
+      "name": "basechili_lfsr",
+      "kind": "module",
+      "path": "source/lfsr/basechili_lfsr.sv",
+      "dependencies": [
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "basechili_max_tree",
+      "kind": "module",
+      "path": "source/max_tree/basechili_max_tree.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_mod_counter",
+      "kind": "module",
+      "path": "source/mod_counter/basechili_mod_counter.sv",
+      "dependencies": [
+        "basechili_dff_sclr"
+      ]
+    },
+    {
+      "name": "basechili_mul_lo",
+      "kind": "module",
+      "path": "source/mul_lo/basechili_mul_lo.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_dffe_cg"
+      ]
+    },
+    {
+      "name": "basechili_muldiv_iter",
+      "kind": "module",
+      "path": "source/muldiv_iter/basechili_muldiv_iter.sv",
+      "dependencies": [
+        "basechili_dffe",
+        "basechili_updown_counter",
+        "basechili_dffe_cg"
+      ]
+    },
+    {
+      "name": "basechili_onehot_check",
+      "kind": "module",
+      "path": "source/onehot_check/basechili_onehot_check.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_onehot_mux",
+      "kind": "module",
+      "path": "source/onehot_mux/basechili_onehot_mux.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_peek_fifo",
+      "kind": "module",
+      "path": "source/peek_fifo/basechili_peek_fifo.sv",
+      "dependencies": [
+        "basechili_mod_counter",
+        "basechili_updown_counter",
+        "basechili_reg_array"
+      ]
+    },
+    {
+      "name": "basechili_priority_encoder",
+      "kind": "module",
+      "path": "source/priority_encoder/basechili_priority_encoder.sv",
+      "dependencies": [
+        "basechili_encoder"
+      ]
+    },
+    {
+      "name": "basechili_pulse_stretch",
+      "kind": "module",
+      "path": "source/pulse_stretch/basechili_pulse_stretch.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_updown_counter"
+      ]
+    },
+    {
+      "name": "basechili_reg_array",
+      "kind": "module",
+      "path": "source/reg_array/basechili_reg_array.sv",
+      "dependencies": [
+        "basechili_decoder",
+        "basechili_regular_mux",
+        "basechili_dffe_cg"
+      ]
+    },
+    {
+      "name": "basechili_regular_mux",
+      "kind": "module",
+      "path": "source/regular_mux/basechili_regular_mux.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_reset_ctrl",
+      "kind": "module",
+      "path": "source/reset_ctrl/basechili_reset_ctrl.sv",
+      "dependencies": [
+        "basechili_reset_sync",
+        "basechili_counter",
+        "basechili_updown_counter",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "basechili_reset_sync",
+      "kind": "module",
+      "path": "source/reset_sync/basechili_reset_sync.sv",
+      "dependencies": [
+        "basechili_sync"
+      ]
+    },
+    {
+      "name": "basechili_rr_arbiter",
+      "kind": "module",
+      "path": "source/rr_arbiter/basechili_rr_arbiter.sv",
+      "dependencies": [
+        "basechili_priority_encoder",
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "basechili_shift_reg",
+      "kind": "module",
+      "path": "source/shift_reg/basechili_shift_reg.sv",
+      "dependencies": [
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "basechili_sram_sp",
+      "kind": "module",
+      "path": "source/sram_sp/basechili_sram_sp.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_sync",
+      "kind": "module",
+      "path": "source/sync/basechili_sync.sv",
+      "dependencies": [
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "basechili_tag_compare",
+      "kind": "module",
+      "path": "source/tag_compare/basechili_tag_compare.sv",
+      "dependencies": [
+        "basechili_encoder",
+        "basechili_onehot_check"
+      ]
+    },
+    {
+      "name": "basechili_thermo_encoder",
+      "kind": "module",
+      "path": "source/thermo_encoder/basechili_thermo_encoder.sv",
+      "dependencies": []
+    },
+    {
+      "name": "basechili_updown_counter",
+      "kind": "module",
+      "path": "source/updown_counter/basechili_updown_counter.sv",
+      "dependencies": [
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "basechili_valid_array",
+      "kind": "module",
+      "path": "source/valid_array/basechili_valid_array.sv",
+      "dependencies": [
+        "basechili_decoder",
+        "basechili_dff_sclr",
+        "basechili_priority_encoder"
+      ]
+    },
+    {
+      "name": "basechili_wide_counter",
+      "kind": "module",
+      "path": "source/wide_counter/basechili_wide_counter.sv",
+      "dependencies": [
+        "basechili_dffe"
+      ]
+    }
+  ]
+}

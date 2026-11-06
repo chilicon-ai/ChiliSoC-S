@@ -1,0 +1,8 @@
+# sim/run.py with no arguments runs these (one name per line, # comments)
+rv32ui          # riscv-tests user-level ISA tests
+rv32um          # riscv-tests M extension
+rv32uc          # riscv-tests C extension
+rv32mi          # riscv-tests machine mode: CSRs, traps, counters
+chillus         # sim/tests/*.S, *.c: hazard, control-flow, trap, M sequences, C runtime
+random:30       # random instruction sequences, seeds 1..30
+coremark        # CoreMark, 1 iteration ($COREMARK)

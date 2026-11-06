@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Chilicon
+# ChillU-S ISA description for RISCOF (riscv-config schema_isa.yaml).
+# RV32IMC + Zicsr + Zifencei + Zicntr, machine and user mode (no S), 4 PMP
+# entries (grain 4 bytes), misaligned loads / stores trap (no hardware support), misa
+# read-only (MXL = 1, extensions I, M, C, U).
+hart_ids: [0]
+hart0:
+  ISA: RV32IMCUZicntr_Zicsr_Zifencei_Zca
+  physical_addr_sz: 32
+  User_Spec_Version: '2.3'
+  Privilege_Spec_Version: '1.11'
+  hw_data_misaligned_support: false
+  PMP:
+    implemented: True
+    pmp-grain: 0
+    pmp-count: 4
+    pmp-writable: 4
+  supported_xlen: [32]
+  misa:
+    reset-val: 0x40101104
+    rv32:
+      accessible: true
+      mxl:
+        implemented: true
+        type:
+          ro_constant: 0x1
+      extensions:
+        implemented: true
+        type:
+          ro_constant: 0x101104

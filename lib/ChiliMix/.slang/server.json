@@ -1,0 +1,11 @@
+{
+  "index": [
+    {
+      "dirs": [
+        "source",
+        "../BaseChiliSV/source"
+      ]
+    }
+  ],
+  "flags": "-Wno-empty-output-connection -Wno-useless-cast -Wno-unused-package-parameter"
+}

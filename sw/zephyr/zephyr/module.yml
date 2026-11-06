@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Chilicon
+# ChiliSoC-S as a Zephyr module: the SoC, the simulation board and its
+# devicetree (west build -b chilisocs_sim with ZEPHYR_EXTRA_MODULES=<this dir>)
+name: chilisocs
+build:
+  settings:
+    board_root: .
+    soc_root: .
+    dts_root: .

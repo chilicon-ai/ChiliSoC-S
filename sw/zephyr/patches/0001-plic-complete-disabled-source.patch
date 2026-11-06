@@ -1,0 +1,67 @@
+Zephyr v4.4.2 patch applied by tools/install_zephyr.sh (git apply in $ZEPHYR_BASE).
+Upstream: not yet submitted. A submission needs the author's Signed-off-by (DCO).
+
+Subject: drivers: intc: plic: complete a source the ISR disabled
+
+The PLIC specification (v1.0.0, Interrupt Completion) says a completion
+whose ID does not match a source currently enabled for the target is
+silently ignored. plic_irq_handler() completes a level-triggered source
+after its ISR has run, so when the ISR disabled that source (for example
+a GPIO callback that masks a level interrupt until a work item has
+served the device) the completion is dropped and the source stays
+claimed: it never interrupts again once re-enabled.
+
+Enable the source on this hart's context around the completion write,
+as Linux's PLIC driver does (plic_irq_eoi), and restore the enable bit.
+Found with tests/drivers/gpio/gpio_api_1pin (level tests) on a PLIC that
+implements the specification's rule.
+---
+ drivers/interrupt_controller/intc_plic.c | 26 ++++++++++++++++++++++--
+ 1 file changed, 24 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/interrupt_controller/intc_plic.c b/drivers/interrupt_controller/intc_plic.c
+index 95523c96389..5dbf7edd39d 100644
+--- a/drivers/interrupt_controller/intc_plic.c
++++ b/drivers/interrupt_controller/intc_plic.c
+@@ -503,6 +503,28 @@ static ALWAYS_INLINE uint16_t *get_irq_hit_count_total(const struct device *dev,
+ }
+ #endif /* CONFIG_PLIC_SHELL_IRQ_COUNT */
+ 
++/*
++ * Complete local_irq on this hart's context. The PLIC spec ignores a
++ * completion of a source that is not enabled for the target, so a source an
++ * ISR disabled (e.g. a level GPIO interrupt masked until a work item has
++ * served the device) would stay claimed forever: enable it around the write.
++ */
++static void plic_irq_complete_local(const struct device *dev, uint32_t local_irq)
++{
++	mem_addr_t en_addr = get_context_en_addr(dev, arch_curr_cpu()->id) +
++			     local_irq_to_reg_offset(local_irq);
++	uint32_t en_value = sys_read32(en_addr);
++	uint32_t bit = BIT(local_irq & PLIC_REG_MASK);
++
++	if ((en_value & bit) == 0U) {
++		sys_write32(en_value | bit, en_addr);
++	}
++	sys_write32(local_irq, get_claim_complete_addr(dev));
++	if ((en_value & bit) == 0U) {
++		sys_write32(en_value, en_addr);
++	}
++}
++
+ static void plic_irq_handler(const struct device *dev)
+ {
+ 	const struct plic_config *config = dev->config;
+@@ -577,10 +599,10 @@ static void plic_irq_handler(const struct device *dev)
+ #ifdef CONFIG_PLIC_SUPPORTS_TRIG_EDGE
+ 	/* Handle only if level-triggered */
+ 	if (trig_val == PLIC_TRIG_LEVEL) {
+-		sys_write32(local_irq, claim_complete_addr);
++		plic_irq_complete_local(dev, local_irq);
+ 	}
+ #else
+-	sys_write32(local_irq, claim_complete_addr);
++	plic_irq_complete_local(dev, local_irq);
+ #endif /* #ifdef CONFIG_PLIC_SUPPORTS_TRIG_EDGE */
+ }
+ 

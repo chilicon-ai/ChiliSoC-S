@@ -1,0 +1,10 @@
+ChiliSoC-S, ChillU-S, ChiliMix and BaseChiliSV
+Copyright 2026 Chilicon
+
+Licensed under Apache-2.0 (see LICENSE), except the files below,
+which keep the license stated in them:
+
+  lib/chillus/sim/coremark/core_portme.c
+  lib/chillus/sim/coremark/core_portme.h
+
+sw/zephyr/patches/ are changes to Zephyr (Apache-2.0), offered under its license.

@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Chilicon
+# ChillU-S platform for RISCOF (riscv-config schema_platform.yaml): the
+# testbench's CLINT (chillus_clint at 0x0200_0000, as Spike / SiFive).
+mtime:
+  implemented: true
+  address: 0x0200bff8
+mtimecmp:
+  implemented: true
+  address: 0x02004000
+nmi:
+  label: nmi_vector
+reset:
+  label: reset_vector

@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Chilicon
+board:
+  name: chilisocs_sim
+  full_name: ChiliSoC-S simulation
+  vendor: chilicon
+  socs:
+    - name: chilisocs

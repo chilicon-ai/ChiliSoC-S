@@ -1,0 +1,21 @@
+# ChiliSoC-S regression: sw/tests/<name>.c, or coremark (needs $COREMARK)
+hello
+clint
+plic
+bus
+sysrst
+irq
+wfi
+pwm
+wdog
+debug
+umode
+pmp
+spi
+xip
+i2c
+dma
+regs
+openocd
+stress
+coremark

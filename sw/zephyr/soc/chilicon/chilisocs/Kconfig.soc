@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Chilicon
+# ChiliSoC-S: ChillU-S (RV32IMC, M / U-mode, PMP) with ChiliMix IP
+
+config SOC_CHILISOCS
+	bool
+	help
+	  ChiliSoC-S microcontroller SoC.
+
+config SOC
+	default "chilisocs" if SOC_CHILISOCS

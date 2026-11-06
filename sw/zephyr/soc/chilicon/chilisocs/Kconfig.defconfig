@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Chilicon
+if SOC_CHILISOCS
+
+# mtime counts at the mtime-clk frequency (core clock / socctl clkdiv[0])
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default $(dt_node_int_prop_int,/clocks/mtime-clk,clock-frequency)
+
+config SYS_CLOCK_TICKS_PER_SEC
+	default 1000
+
+config PMP_SLOTS
+	default 4
+
+# 4 PMP slots: the read-only region (TOR, 2) and the IRQ stack guard leave
+# no room for a thread's stack guard plus the MPRV catch-all, so the tests
+# do not turn on hardware stack protection by default
+config TEST_HW_STACK_PROTECTION
+	default n
+
+config RISCV_SOC_INTERRUPT_INIT
+	default y
+
+# level 1: the 32 core interrupt causes; level 2: the 63 PLIC sources
+config 2ND_LVL_ISR_TBL_OFFSET
+	default 32
+
+config 2ND_LVL_INTR_00_OFFSET
+	default 11
+
+config MAX_IRQ_PER_AGGREGATOR
+	default 64
+
+config NUM_IRQS
+	default 96
+
+endif # SOC_CHILISOCS

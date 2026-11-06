@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Chilicon
+# ChillU-S has no A extension (atomics by interrupt locking), a SiFive PLIC
+# behind the machine external interrupt and 4 PMP regions (OFF / TOR / NA4 /
+# NAPOT, granularity 4 bytes).
+
+config SOC_CHILISOCS
+	select RISCV
+	select RISCV_PRIVILEGED
+	select RISCV_HAS_PLIC
+	select ATOMIC_OPERATIONS_C
+	select INCLUDE_RESET_VECTOR
+	select RISCV_PMP

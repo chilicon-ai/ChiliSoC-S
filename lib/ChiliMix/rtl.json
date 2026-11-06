@@ -1,0 +1,334 @@
+{
+  "units": [
+    {
+      "name": "chilimix_aclint_regs",
+      "kind": "module",
+      "path": "source/aclint/chilimix_aclint_regs.sv",
+      "dependencies": [
+        "basechili_apb_regbank",
+        "basechili_apb_interconnect"
+      ]
+    },
+    {
+      "name": "chilimix_aclint",
+      "kind": "module",
+      "path": "source/aclint/chilimix_aclint.sv",
+      "dependencies": [
+        "chilimix_aclint_regs",
+        "basechili_wide_counter",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_plic_regs",
+      "kind": "module",
+      "path": "source/plic/chilimix_plic_regs.sv",
+      "dependencies": [
+        "basechili_apb_regbank",
+        "basechili_apb_interconnect"
+      ]
+    },
+    {
+      "name": "chilimix_plic",
+      "kind": "module",
+      "path": "source/plic/chilimix_plic.sv",
+      "dependencies": [
+        "chilimix_plic_regs",
+        "basechili_max_tree",
+        "basechili_onehot_mux",
+        "basechili_decoder",
+        "basechili_valid_array",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_uart_regs",
+      "kind": "module",
+      "path": "source/uart/chilimix_uart_regs.sv",
+      "dependencies": [
+        "basechili_apb_regbank"
+      ]
+    },
+    {
+      "name": "chilimix_uart_tx",
+      "kind": "module",
+      "path": "source/uart/chilimix_uart_tx.sv",
+      "dependencies": [
+        "basechili_counter",
+        "basechili_shift_reg",
+        "basechili_thermo_encoder",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_uart_rx",
+      "kind": "module",
+      "path": "source/uart/chilimix_uart_rx.sv",
+      "dependencies": [
+        "basechili_counter",
+        "basechili_shift_reg",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_uart",
+      "kind": "module",
+      "path": "source/uart/chilimix_uart.sv",
+      "dependencies": [
+        "chilimix_uart_regs",
+        "chilimix_uart_tx",
+        "chilimix_uart_rx",
+        "basechili_fifo",
+        "basechili_counter",
+        "basechili_updown_counter",
+        "basechili_sync",
+        "basechili_edge_detect",
+        "basechili_irq_aggregator",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_gpio_regs",
+      "kind": "module",
+      "path": "source/gpio/chilimix_gpio_regs.sv",
+      "dependencies": [
+        "basechili_apb_regbank"
+      ]
+    },
+    {
+      "name": "chilimix_gpio",
+      "kind": "module",
+      "path": "source/gpio/chilimix_gpio.sv",
+      "dependencies": [
+        "chilimix_gpio_regs",
+        "basechili_sync",
+        "basechili_edge_detect",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_socctl_regs",
+      "kind": "module",
+      "path": "source/socctl/chilimix_socctl_regs.sv",
+      "dependencies": [
+        "basechili_apb_regbank"
+      ]
+    },
+    {
+      "name": "chilimix_socctl",
+      "kind": "module",
+      "path": "source/socctl/chilimix_socctl.sv",
+      "dependencies": [
+        "chilimix_socctl_regs",
+        "basechili_reset_sync",
+        "basechili_reset_ctrl",
+        "basechili_sync",
+        "basechili_pulse_stretch",
+        "basechili_clock_div",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_timer_pwm_regs",
+      "kind": "module",
+      "path": "source/timer/chilimix_timer_pwm_regs.sv",
+      "dependencies": [
+        "basechili_apb_regbank"
+      ]
+    },
+    {
+      "name": "chilimix_timer_pwm",
+      "kind": "module",
+      "path": "source/timer/chilimix_timer_pwm.sv",
+      "dependencies": [
+        "chilimix_timer_pwm_regs",
+        "basechili_updown_counter",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_timer_wdog_regs",
+      "kind": "module",
+      "path": "source/timer/chilimix_timer_wdog_regs.sv",
+      "dependencies": [
+        "basechili_apb_regbank"
+      ]
+    },
+    {
+      "name": "chilimix_timer_wdog",
+      "kind": "module",
+      "path": "source/timer/chilimix_timer_wdog.sv",
+      "dependencies": [
+        "chilimix_timer_wdog_regs",
+        "basechili_updown_counter",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_timer",
+      "kind": "module",
+      "path": "source/timer/chilimix_timer.sv",
+      "dependencies": [
+        "chilimix_timer_pwm",
+        "chilimix_timer_wdog",
+        "basechili_apb_interconnect"
+      ]
+    },
+    {
+      "name": "chilimix_debug_dtm",
+      "kind": "module",
+      "path": "source/debug/chilimix_debug_dtm.sv",
+      "dependencies": [
+        "basechili_jtag_tap",
+        "basechili_handshake_sync",
+        "basechili_reset_sync",
+        "basechili_dff",
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "chilimix_debug_pkg",
+      "kind": "package",
+      "path": "source/debug/chilimix_debug_pkg.sv",
+      "dependencies": []
+    },
+    {
+      "name": "chilimix_debug_dm",
+      "kind": "module",
+      "path": "source/debug/chilimix_debug_dm.sv",
+      "dependencies": [
+        "chilimix_debug_pkg",
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_dff_sclr"
+      ]
+    },
+    {
+      "name": "chilimix_debug",
+      "kind": "module",
+      "path": "source/debug/chilimix_debug.sv",
+      "dependencies": [
+        "chilimix_debug_dtm",
+        "chilimix_debug_dm",
+        "basechili_ahb_sram",
+        "basechili_ahb_manager"
+      ]
+    },
+    {
+      "name": "chilimix_spi_regs",
+      "kind": "module",
+      "path": "source/spi/chilimix_spi_regs.sv",
+      "dependencies": [
+        "basechili_apb_regbank"
+      ]
+    },
+    {
+      "name": "chilimix_spi_phy",
+      "kind": "module",
+      "path": "source/spi/chilimix_spi_phy.sv",
+      "dependencies": [
+        "basechili_counter",
+        "basechili_updown_counter",
+        "basechili_decoder",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_spi_xip",
+      "kind": "module",
+      "path": "source/spi/chilimix_spi_xip.sv",
+      "dependencies": [
+        "basechili_ahb_subordinate",
+        "basechili_tag_compare",
+        "basechili_valid_array",
+        "basechili_reg_array",
+        "basechili_counter",
+        "basechili_updown_counter",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_spi",
+      "kind": "module",
+      "path": "source/spi/chilimix_spi.sv",
+      "dependencies": [
+        "chilimix_spi_regs",
+        "chilimix_spi_phy",
+        "chilimix_spi_xip",
+        "basechili_fifo",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_i2c_regs",
+      "kind": "module",
+      "path": "source/i2c/chilimix_i2c_regs.sv",
+      "dependencies": [
+        "basechili_apb_regbank"
+      ]
+    },
+    {
+      "name": "chilimix_i2c_bit",
+      "kind": "module",
+      "path": "source/i2c/chilimix_i2c_bit.sv",
+      "dependencies": [
+        "basechili_sync",
+        "basechili_counter",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_i2c",
+      "kind": "module",
+      "path": "source/i2c/chilimix_i2c.sv",
+      "dependencies": [
+        "chilimix_i2c_regs",
+        "chilimix_i2c_bit",
+        "basechili_shift_reg",
+        "basechili_counter",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_dma_regs",
+      "kind": "module",
+      "path": "source/dma/chilimix_dma_regs.sv",
+      "dependencies": [
+        "basechili_apb_regbank",
+        "basechili_apb_interconnect"
+      ]
+    },
+    {
+      "name": "chilimix_dma_ch",
+      "kind": "module",
+      "path": "source/dma/chilimix_dma_ch.sv",
+      "dependencies": [
+        "chilimix_dma_regs",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chilimix_dma",
+      "kind": "module",
+      "path": "source/dma/chilimix_dma.sv",
+      "dependencies": [
+        "chilimix_dma_ch",
+        "basechili_apb_interconnect",
+        "basechili_rr_arbiter",
+        "basechili_ahb_manager",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    }
+  ]
+}

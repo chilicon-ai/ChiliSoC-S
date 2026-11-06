@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Chilicon
+identifier: chilisocs_sim
+name: ChiliSoC-S simulation
+type: sim
+arch: riscv
+toolchain:
+  - zephyr
+ram: 64
+flash: 64
+simulation:
+  - name: custom
+    exec: python3
+supported:
+  - gpio
+  - watchdog
+  - i2c
+  - eeprom
+testing:
+  # about 100k cycles/s of a 4 MHz clock: 40 s of wall time per simulated second
+  timeout_multiplier: 30
+  ignore_tags:
+    - net
+    - bluetooth
+    - flash
+vendor: chilicon

@@ -1,0 +1,293 @@
+{
+  "units": [
+    {
+      "name": "chillus_ifu_fetch",
+      "kind": "module",
+      "path": "ifu/chillus_ifu_fetch.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_updown_counter"
+      ]
+    },
+    {
+      "name": "chillus_ifu_align",
+      "kind": "module",
+      "path": "ifu/chillus_ifu_align.sv",
+      "dependencies": [
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "chillus_ifu",
+      "kind": "module",
+      "path": "ifu/chillus_ifu.sv",
+      "dependencies": [
+        "chillus_ifu_fetch",
+        "chillus_ifu_align",
+        "basechili_peek_fifo"
+      ]
+    },
+    {
+      "name": "chillus_dec_pkg",
+      "kind": "package",
+      "path": "dec/chillus_dec_pkg.sv",
+      "dependencies": []
+    },
+    {
+      "name": "chillus_rvc",
+      "kind": "module",
+      "path": "rvc/chillus_rvc.sv",
+      "dependencies": []
+    },
+    {
+      "name": "chillus_rsdec",
+      "kind": "module",
+      "path": "rsdec/chillus_rsdec.sv",
+      "dependencies": []
+    },
+    {
+      "name": "chillus_dec",
+      "kind": "module",
+      "path": "dec/chillus_dec.sv",
+      "dependencies": [
+        "chillus_dec_pkg",
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "chillus_rf",
+      "kind": "module",
+      "path": "rf/chillus_rf.sv",
+      "dependencies": [
+        "basechili_latch_array",
+        "basechili_reg_array"
+      ]
+    },
+    {
+      "name": "chillus_alu",
+      "kind": "module",
+      "path": "alu/chillus_alu.sv",
+      "dependencies": [
+        "chillus_dec_pkg"
+      ]
+    },
+    {
+      "name": "chillus_lsu",
+      "kind": "module",
+      "path": "lsu/chillus_lsu.sv",
+      "dependencies": [
+        "chillus_dec_pkg",
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_byte_strobe"
+      ]
+    },
+    {
+      "name": "chillus_bp",
+      "kind": "module",
+      "path": "bp/chillus_bp.sv",
+      "dependencies": [
+        "chillus_dec_pkg"
+      ]
+    },
+    {
+      "name": "chillus_bru",
+      "kind": "module",
+      "path": "bru/chillus_bru.sv",
+      "dependencies": [
+        "chillus_dec_pkg"
+      ]
+    },
+    {
+      "name": "chillus_trap",
+      "kind": "module",
+      "path": "trap/chillus_trap.sv",
+      "dependencies": [
+        "chillus_dec_pkg",
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chillus_dbg",
+      "kind": "module",
+      "path": "dbg/chillus_dbg.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "chillus_trig",
+      "kind": "module",
+      "path": "trig/chillus_trig.sv",
+      "dependencies": [
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "chillus_pmp_match",
+      "kind": "module",
+      "path": "pmp/chillus_pmp_match.sv",
+      "dependencies": []
+    },
+    {
+      "name": "chillus_pmp",
+      "kind": "module",
+      "path": "pmp/chillus_pmp.sv",
+      "dependencies": [
+        "chillus_pmp_match",
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "chillus_mdu",
+      "kind": "module",
+      "path": "mdu/chillus_mdu.sv",
+      "dependencies": [
+        "chillus_dec_pkg",
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_mul_lo",
+        "basechili_muldiv_iter"
+      ]
+    },
+    {
+      "name": "chillus_csr",
+      "kind": "module",
+      "path": "csr/chillus_csr.sv",
+      "dependencies": [
+        "chillus_dec_pkg",
+        "basechili_dffe",
+        "basechili_updown_counter",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chillus_scoreboard",
+      "kind": "module",
+      "path": "sb/chillus_scoreboard.sv",
+      "dependencies": [
+        "chillus_dec_pkg",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chillus_result",
+      "kind": "module",
+      "path": "result/chillus_result.sv",
+      "dependencies": [
+        "chillus_dec_pkg",
+        "basechili_dffe"
+      ]
+    },
+    {
+      "name": "chillus_rvfi",
+      "kind": "module",
+      "path": "rvfi/chillus_rvfi.sv",
+      "dependencies": [
+        "chillus_dec_pkg",
+        "basechili_dffe",
+        "basechili_counter",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chillus_insample",
+      "kind": "module",
+      "path": "insample/chillus_insample.sv",
+      "dependencies": [
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chillus_ctrl",
+      "kind": "module",
+      "path": "ctrl/chillus_ctrl.sv",
+      "dependencies": [
+        "chillus_dec_pkg",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chillus_core",
+      "kind": "module",
+      "path": "core/chillus_core.sv",
+      "dependencies": [
+        "chillus_dec_pkg",
+        "chillus_ifu",
+        "chillus_rvc",
+        "chillus_rsdec",
+        "chillus_dec",
+        "chillus_bp",
+        "chillus_insample",
+        "basechili_clock_gate",
+        "chillus_ctrl",
+        "chillus_rf",
+        "chillus_scoreboard",
+        "chillus_alu",
+        "chillus_bru",
+        "chillus_lsu",
+        "chillus_csr",
+        "chillus_trap",
+        "chillus_mdu",
+        "chillus_result",
+        "chillus_rvfi",
+        "chillus_pmp",
+        "chillus_dbg",
+        "chillus_trig",
+        "chillus_icache"
+      ]
+    },
+    {
+      "name": "chillus_clint",
+      "kind": "module",
+      "path": "clint/chillus_clint.sv",
+      "dependencies": [
+        "basechili_dffe",
+        "basechili_updown_counter"
+      ]
+    },
+    {
+      "name": "chillus_imss_ahb",
+      "kind": "module",
+      "path": "ahb/chillus_imss_ahb.sv",
+      "dependencies": [
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chillus_dmss_ahb",
+      "kind": "module",
+      "path": "ahb/chillus_dmss_ahb.sv",
+      "dependencies": [
+        "basechili_dffe",
+        "basechili_dff"
+      ]
+    },
+    {
+      "name": "chillus_ahb",
+      "kind": "module",
+      "path": "ahb/chillus_ahb.sv",
+      "dependencies": [
+        "chillus_core",
+        "chillus_imss_ahb",
+        "chillus_dmss_ahb",
+        "chillus_dec_pkg"
+      ]
+    },
+    {
+      "name": "chillus_icache",
+      "kind": "module",
+      "path": "icache/chillus_icache.sv",
+      "dependencies": [
+        "basechili_dff",
+        "basechili_dffe",
+        "basechili_tag_compare",
+        "basechili_updown_counter",
+        "basechili_sram_sp"
+      ]
+    }
+  ]
+}

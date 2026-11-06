@@ -1,0 +1,49 @@
+{
+  "units": [
+    {
+      "name": "chilisocs_pkg",
+      "kind": "package",
+      "path": "source/pkg/chilisocs_pkg.sv",
+      "dependencies": []
+    },
+    {
+      "name": "chilisocs_fabric",
+      "kind": "module",
+      "path": "source/fabric/chilisocs_fabric.sv",
+      "dependencies": [
+        "chilisocs_pkg",
+        "basechili_ahb_pkg",
+        "basechili_ahb_decoder",
+        "basechili_ahb_mux",
+        "basechili_ahb_arbiter",
+        "basechili_ahb_default_sub"
+      ]
+    },
+    {
+      "name": "chilisocs_top",
+      "kind": "module",
+      "path": "source/top/chilisocs_top.sv",
+      "dependencies": [
+        "chilisocs_pkg",
+        "chilisocs_fabric",
+        "chillus_ahb",
+        "basechili_ahb_wait",
+        "basechili_ahb_sram",
+        "basechili_sram_sp",
+        "basechili_reset_sync",
+        "basechili_ahb_to_apb",
+        "basechili_apb_interconnect",
+        "chilimix_aclint",
+        "chilimix_plic",
+        "chilimix_socctl",
+        "chilimix_gpio",
+        "chilimix_uart",
+        "chilimix_timer",
+        "chilimix_debug",
+        "chilimix_spi",
+        "chilimix_i2c",
+        "chilimix_dma"
+      ]
+    }
+  ]
+}

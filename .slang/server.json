@@ -1,0 +1,13 @@
+{
+  "index": [
+    {
+      "dirs": [
+        "source",
+        "lib/BaseChiliSV/source",
+        "lib/ChiliMix/source",
+        "lib/chillus/source"
+      ]
+    }
+  ],
+  "flags": "-Wno-empty-output-connection -Wno-useless-cast -Wno-unused-package-parameter -Wno-unused-but-set-variable"
+}

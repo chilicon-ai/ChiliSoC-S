@@ -1,0 +1,82 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* Copyright 2026 Chilicon */
+/*
+ * ChiliSoC-S :: chilisocs_sim -- the SoC on its Verilator testbench (sim/tb)
+ *
+ * The testbench loads the program into SRAM0 and the boot ROM jumps to
+ * 0x8000_0000. Only SRAM0 is on the instruction bus, so it is Zephyr's
+ * "flash" (XIP: code and read-only data) and SRAM1 its RAM. Its clock has
+ * no real frequency: 4 MHz (mtime 2 MHz) keeps the kernel tests' sleeps
+ * short in simulation.
+ * UART0 runs at core clock / 16 (divisor 1, the testbench's +uart_div=1).
+ * Each driven GPIO output loops back to its own input; the testbench has a
+ * SPI NOR flash on SPI0 (chip select 0) and an I2C EEPROM on I2C0.
+ */
+
+/dts-v1/;
+
+#include <chilicon/chilisocs.dtsi>
+#include <zephyr/dt-bindings/i2c/i2c.h>
+
+/ {
+	model = "ChiliSoC-S simulation";
+	compatible = "chilicon,chilisocs-sim";
+
+	aliases {
+		led0 = &led0;
+		watchdog0 = &wdog0;
+		eeprom-0 = &eeprom0;
+	};
+
+	chosen {
+		zephyr,console = &uart0;
+		zephyr,shell-uart = &uart0;
+		zephyr,flash = &sram0;
+		zephyr,sram = &sram1;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		led0: led_0 {
+			gpios = <&gpio0 0 GPIO_ACTIVE_HIGH>;
+			label = "GPIO 0 (looped back)";
+		};
+	};
+};
+
+&coreclk {
+	clock-frequency = <4000000>;
+};
+
+&mtimeclk {
+	clock-frequency = <2000000>;
+};
+
+&uart0 {
+	clock-frequency = <4000000>;
+	current-speed = <250000>;
+	status = "okay";
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+&wdog0 {
+	status = "okay";
+};
+
+&i2c0 {
+	clock-frequency = <I2C_BITRATE_STANDARD>;
+	status = "okay";
+
+	eeprom0: eeprom@50 {
+		compatible = "atmel,at24";
+		reg = <0x50>;
+		size = <256>;
+		pagesize = <8>;
+		address-width = <8>;
+		timeout = <5>;
+	};
+};

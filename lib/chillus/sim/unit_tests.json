@@ -1,0 +1,8 @@
+{
+  "chillus_icache": {"params": [
+    {"SIZE_KB": 2},
+    {"SIZE_KB": 4, "GNT_PCT": 40, "LAT_MAX": 7, "SEED": 2},
+    {"SIZE_KB": 2, "CACHE_MASK": "32'h0", "GNT_PCT": 100, "LAT_MAX": 1, "SEED": 3},
+    {"SIZE_KB": 0, "N_REQ": 20000, "SEED": 4}
+  ]}
+}

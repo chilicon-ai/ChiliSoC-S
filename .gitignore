@@ -1,0 +1,8 @@
+__pycache__/
+.venv/
+.vscode/
+syn/out/
+sim/out/
+formal/out/
+syn/orfs/out/
+fpga/out/

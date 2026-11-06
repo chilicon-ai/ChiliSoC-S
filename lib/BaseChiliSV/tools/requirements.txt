@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Chilicon
+# Python tools for this repository: python -m pip install -r tools/requirements.txt
+pyslang==12.0.0      # SystemVerilog lint / elaboration (tools/lint.py)

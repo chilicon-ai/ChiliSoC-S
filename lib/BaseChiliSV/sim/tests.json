@@ -1,0 +1,710 @@
+{
+  "basechili_ahb_arbiter": {
+    "params": [
+      {},
+      {
+        "N": 1
+      },
+      {
+        "N": 3
+      },
+      {
+        "N": 4,
+        "DATA_W": 64
+      }
+    ]
+  },
+  "basechili_ahb_decoder": {
+    "params": [
+      {},
+      {
+        "N": 1
+      },
+      {
+        "N": 5,
+        "ADDR_W": 12
+      }
+    ]
+  },
+  "basechili_ahb_default_sub": {
+    "note": "the FSM default branch is unreachable; HRDATA is constant zero",
+    "min_line": 75,
+    "min_toggle": 15,
+    "params": [
+      {},
+      {
+        "DATA_W": 64
+      }
+    ]
+  },
+  "basechili_ahb_manager": {
+    "note": "the FSM default branch is unreachable",
+    "min_line": 80,
+    "min_toggle": 95,
+    "params": [
+      {},
+      {
+        "USER_DATA_W": 128
+      },
+      {
+        "USER_DATA_W": 96
+      },
+      {
+        "HDATA_W": 64,
+        "USER_DATA_W": 512
+      }
+    ]
+  },
+  "basechili_ahb_mux": {
+    "params": [
+      {},
+      {
+        "N": 1
+      },
+      {
+        "N": 5,
+        "DATA_W": 64
+      }
+    ]
+  },
+  "basechili_ahb_sram": {
+    "params": [
+      {},
+      {
+        "READ_ONLY": 1
+      },
+      {
+        "DATA_W": 64,
+        "MEM_AW": 4
+      },
+      {
+        "DATA_W": 16,
+        "MEM_AW": 3
+      }
+    ]
+  },
+  "basechili_ahb_subordinate": {
+    "note": "the FSM default branch is unreachable",
+    "min_line": 85,
+    "min_toggle": 95,
+    "params": [
+      {},
+      {
+        "USER_DATA_W": 128
+      },
+      {
+        "HDATA_W": 64
+      }
+    ]
+  },
+  "basechili_ahb_to_apb": {
+    "note": "the FSM default branch is unreachable",
+    "min_line": 83,
+    "params": [
+      {},
+      {
+        "ADDR_W": 16,
+        "DATA_W": 64
+      },
+      {
+        "DATA_W": 16
+      }
+    ]
+  },
+  "basechili_ahb_wait": {
+    "note": "the FSM default branch is unreachable; lfsr_load is constant",
+    "min_line": 80,
+    "params": [
+      {},
+      {
+        "WAIT": 0
+      },
+      {
+        "WAIT": 3
+      },
+      {
+        "WAIT": 5,
+        "RANDOM": 1
+      },
+      {
+        "WAIT": 1,
+        "RANDOM": 1
+      },
+      {
+        "DATA_W": 64,
+        "WAIT": 4,
+        "RANDOM": 1,
+        "SEED": "16'hace1"
+      }
+    ]
+  },
+  "basechili_apb_interconnect": {
+    "params": [
+      {},
+      {
+        "N": 1
+      },
+      {
+        "N": 5,
+        "ADDR_W": 16
+      }
+    ]
+  },
+  "basechili_apb_regbank": {
+    "params": [
+      {},
+      {
+        "N": 1,
+        "DATA_W": 8,
+        "ADDR_W": 4
+      },
+      {
+        "N": 5,
+        "DATA_W": 64
+      }
+    ]
+  },
+  "basechili_byte_strobe": {
+    "params": [
+      {},
+      {
+        "DATA_W": 64
+      },
+      {
+        "DATA_W": 16
+      }
+    ]
+  },
+  "basechili_clock_div": {
+    "params": [
+      {},
+      {
+        "W": 2
+      },
+      {
+        "W": 5
+      }
+    ]
+  },
+  "basechili_clock_gate": {
+    "params": [
+      {}
+    ]
+  },
+  "basechili_counter": {
+    "params": [
+      {},
+      {
+        "WIDTH": 3
+      }
+    ]
+  },
+  "basechili_decoder": {
+    "params": [
+      {},
+      {
+        "N": 5
+      },
+      {
+        "N": 1
+      }
+    ]
+  },
+  "basechili_dff": {
+    "params": [
+      {},
+      {
+        "WIDTH": 37,
+        "RESET_VAL": "37'h15a5a5a5a5"
+      }
+    ]
+  },
+  "basechili_dff_sclr": {
+    "params": [
+      {},
+      {
+        "WIDTH": 9,
+        "RESET_VAL": "9'h0a5",
+        "CLR_VAL": "9'h15a"
+      }
+    ]
+  },
+  "basechili_dffe": {
+    "params": [
+      {},
+      {
+        "WIDTH": 37,
+        "RESET_VAL": "37'h15a5a5a5a5"
+      }
+    ]
+  },
+  "basechili_dffe_cg": {
+    "params": [
+      {},
+      {
+        "WIDTH": 37,
+        "RESET_VAL": "37'h15a5a5a5a5"
+      },
+      {
+        "WIDTH": 8,
+        "GATE": 0
+      }
+    ]
+  },
+  "basechili_edge_detect": {
+    "params": [
+      {},
+      {
+        "WIDTH": 5,
+        "RESET_VAL": "5'h15"
+      }
+    ]
+  },
+  "basechili_encoder": {
+    "params": [
+      {},
+      {
+        "N": 5
+      }
+    ]
+  },
+  "basechili_fifo": {
+    "params": [
+      {},
+      {
+        "WIDTH": 8,
+        "DEPTH": 5
+      },
+      {
+        "WIDTH": 8,
+        "DEPTH": 1
+      }
+    ]
+  },
+  "basechili_handshake_sync": {
+    "params": [
+      {},
+      {
+        "WIDTH": 8,
+        "STAGES": 3,
+        "SRC_HALF": 13,
+        "DST_HALF": 4
+      },
+      {
+        "WIDTH": 1,
+        "SRC_HALF": 3,
+        "DST_HALF": 10
+      }
+    ]
+  },
+  "basechili_irq_aggregator": {
+    "params": [
+      {},
+      {
+        "N": 1
+      },
+      {
+        "N": 13
+      }
+    ]
+  },
+  "basechili_jtag_tap": {
+    "note": "the FSM default branch is unreachable (all 16 states are named)",
+    "min_line": 95,
+    "params": [
+      {},
+      {
+        "IR_W": 2,
+        "IDCODE": "32'h5555_5555"
+      },
+      {
+        "IR_W": 8,
+        "IDCODE": "32'h0000_0001"
+      }
+    ]
+  },
+  "basechili_latch": {
+    "params": [
+      {},
+      {
+        "WIDTH": 33
+      }
+    ]
+  },
+  "basechili_latch_array": {
+    "params": [
+      {},
+      {
+        "WIDTH": 8,
+        "DEPTH": 5,
+        "N_RD": 3
+      },
+      {
+        "WIDTH": 4,
+        "DEPTH": 1
+      }
+    ]
+  },
+  "basechili_lfsr": {
+    "params": [
+      {},
+      {
+        "WIDTH": 8,
+        "POLY": "8'hB8",
+        "SEED": "8'h5a",
+        "PERIOD": 255
+      }
+    ]
+  },
+  "basechili_max_tree": {
+    "params": [
+      {},
+      {
+        "N": 1
+      },
+      {
+        "N": 5,
+        "W": 3
+      },
+      {
+        "N": 13,
+        "W": 4,
+        "SIGNED": 1
+      }
+    ]
+  },
+  "basechili_mod_counter": {
+    "params": [
+      {},
+      {
+        "MOD": 5
+      },
+      {
+        "MOD": 1
+      }
+    ]
+  },
+  "basechili_mul_lo": {
+    "params": [
+      {
+        "LATENCY": 1
+      },
+      {
+        "LATENCY": 2
+      },
+      {
+        "LATENCY": 2,
+        "CLOCK_GATE": 1
+      }
+    ]
+  },
+  "basechili_muldiv_iter": {
+    "params": [
+      {},
+      {
+        "WIDTH": 8
+      },
+      {
+        "WIDTH": 5
+      },
+      {
+        "WIDTH": 2
+      },
+      {
+        "WIDTH": 64
+      },
+      {
+        "WIDTH": 64,
+        "CLOCK_GATE": 1
+      }
+    ]
+  },
+  "basechili_onehot_check": {
+    "params": [
+      {},
+      {
+        "N": 1
+      },
+      {
+        "N": 2
+      },
+      {
+        "N": 5
+      },
+      {
+        "N": 13
+      },
+      {
+        "N": 64
+      }
+    ]
+  },
+  "basechili_onehot_mux": {
+    "params": [
+      {},
+      {
+        "WIDTH": 8,
+        "N": 5
+      }
+    ]
+  },
+  "basechili_peek_fifo": {
+    "params": [
+      {},
+      {
+        "WIDTH": 8,
+        "DEPTH": 5,
+        "PEEK": 3
+      },
+      {
+        "WIDTH": 8,
+        "DEPTH": 1,
+        "PEEK": 1
+      },
+      {
+        "WIDTH": 8,
+        "DEPTH": 5,
+        "PEEK": 3,
+        "CLOCK_GATE": 1
+      }
+    ]
+  },
+  "basechili_priority_encoder": {
+    "params": [
+      {},
+      {
+        "N": 12,
+        "MSB_FIRST": 1
+      },
+      {
+        "N": 1
+      },
+      {
+        "N": 40
+      },
+      {
+        "N": 40,
+        "MSB_FIRST": 1
+      }
+    ]
+  },
+  "basechili_pulse_stretch": {
+    "params": [
+      {},
+      {
+        "CYCLES": 1
+      },
+      {
+        "CYCLES": 2,
+        "WIDTH": 3
+      },
+      {
+        "CYCLES": 7,
+        "WIDTH": 2
+      }
+    ]
+  },
+  "basechili_reg_array": {
+    "params": [
+      {},
+      {
+        "WIDTH": 8,
+        "DEPTH": 5,
+        "N_RD": 3
+      },
+      {
+        "WIDTH": 4,
+        "DEPTH": 1
+      },
+      {
+        "WIDTH": 8,
+        "DEPTH": 5,
+        "N_RD": 3,
+        "CLOCK_GATE": 1
+      },
+      {
+        "WIDTH": 8,
+        "DEPTH": 6,
+        "N_RD": 2,
+        "N_WR": 3,
+        "RESET_INIT": 1
+      },
+      {
+        "WIDTH": 7,
+        "DEPTH": 128,
+        "N_RD": 4,
+        "N_WR": 4,
+        "RESET_INIT": 1,
+        "CLOCK_GATE": 1
+      }
+    ]
+  },
+  "basechili_regular_mux": {
+    "params": [
+      {},
+      {
+        "WIDTH": 8,
+        "N": 5
+      },
+      {
+        "WIDTH": 3,
+        "N": 1
+      }
+    ]
+  },
+  "basechili_reset_ctrl": {
+    "params": [
+      {},
+      {
+        "N": 1,
+        "STEP": 1
+      },
+      {
+        "N": 4,
+        "STEP": 5,
+        "STAGES": 3
+      }
+    ]
+  },
+  "basechili_reset_sync": {
+    "params": [
+      {},
+      {
+        "STAGES": 3
+      }
+    ]
+  },
+  "basechili_rr_arbiter": {
+    "params": [
+      {},
+      {
+        "N": 5
+      },
+      {
+        "N": 2
+      },
+      {
+        "N": 1
+      }
+    ]
+  },
+  "basechili_shift_reg": {
+    "params": [
+      {},
+      {
+        "WIDTH": 1
+      },
+      {
+        "WIDTH": 12,
+        "MSB_FIRST": 1,
+        "RESET_VAL": "12'ha5c"
+      }
+    ]
+  },
+  "basechili_sram_sp": {
+    "params": [
+      {},
+      {
+        "WIDTH": 64,
+        "DEPTH": 5
+      },
+      {
+        "WIDTH": 12,
+        "DEPTH": 1,
+        "BYTE_W": 4
+      },
+      {
+        "WIDTH": 8,
+        "DEPTH": 3
+      }
+    ]
+  },
+  "basechili_sync": {
+    "params": [
+      {},
+      {
+        "WIDTH": 4,
+        "STAGES": 3,
+        "RESET_VAL": "4'ha"
+      }
+    ]
+  },
+  "basechili_tag_compare": {
+    "params": [
+      {},
+      {
+        "WAYS": 1,
+        "TAG_W": 3
+      },
+      {
+        "WAYS": 5,
+        "TAG_W": 7
+      },
+      {
+        "WAYS": 8,
+        "TAG_W": 12
+      }
+    ]
+  },
+  "basechili_thermo_encoder": {
+    "params": [
+      {},
+      {
+        "N": 1
+      },
+      {
+        "N": 5,
+        "MSB_FIRST": 1
+      },
+      {
+        "N": 16
+      }
+    ]
+  },
+  "basechili_updown_counter": {
+    "params": [
+      {},
+      {
+        "WIDTH": 3
+      },
+      {
+        "WIDTH": 5,
+        "RESET_VAL": "5'h16"
+      }
+    ]
+  },
+  "basechili_valid_array": {
+    "params": [
+      {},
+      {
+        "N": 1
+      },
+      {
+        "N": 5
+      },
+      {
+        "N": 16
+      }
+    ]
+  },
+  "basechili_wide_counter": {
+    "params": [
+      {},
+      {
+        "WIDTH": 8,
+        "LO_W": 3,
+        "WORD_W": 4
+      },
+      {
+        "WIDTH": 12,
+        "LO_W": 11,
+        "WORD_W": 12
+      },
+      {
+        "WIDTH": 16,
+        "LO_W": 10,
+        "WORD_W": 4
+      }
+    ]
+  }
+}

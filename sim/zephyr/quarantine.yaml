@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Chilicon
+# Scenarios twister skips on chilisocs_sim (python sim/zephyr/run.py passes
+# this file as --quarantine-list), each for a reason outside this repository.
+
+- scenarios:
+    - arch.shared_interrupt
+    - arch.shared_interrupt.lto
+    - arch.shared_interrupt.lto.speed
+  platforms:
+    - chilisocs_sim/chilisocs
+  comment: >-
+    The test raises interrupts by setting mip bits (trigger_irq); ChillU-S's
+    mip is read-only (legal), so it finds no IRQ to share and
+    fails its setup. Zephyr excludes other such cores (it8xxx2_evb) the same way.
